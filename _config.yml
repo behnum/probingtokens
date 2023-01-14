@@ -1,7 +1,7 @@
 # Setup
 title: Probing Tokens
-tagline: "Probing Tokens Online"
-description: "A sandbox to present some of the results of probing tokens online."
+tagline: ".Online"
+description: "A sandbox to present some of the findings of probing tokens online."
 url: https://probingtokens.online/
 baseurl: ""
 paginate: 5
