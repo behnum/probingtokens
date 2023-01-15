@@ -2,7 +2,7 @@
 title: Probing Tokens
 tagline: ".Online"
 description: "A sandbox to present some of the findings of probing tokens online."
-url: https://probingtokens.online/
+url: https://probingtokens.online
 baseurl: ""
 paginate: 5
 permalink: pretty
