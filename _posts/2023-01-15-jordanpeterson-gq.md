@@ -3,7 +3,7 @@ layout: post
 title: Interpreting the Comments on Jordan Peterson's Most Viewed YouTube Interview
 ---
 
-<video src="/public/uploads/jp-gq.mov" autoplay>
+<video src="/public/uploads/jp-gq.mov" autoplay controls="controls" style="max-width: 996px;">
 </video>
 
 In the digital age, social media has become a powerful tool for expressing opinions and beliefs. YouTube is one of the most popular video-sharing websites, and researchers have been exploring how people evaluate the views presented on these platforms. Results show that users not only engage with what they see, but also with other people's opinions, creating echo chambers where individuals are exposed only to similar ideas and perspectives.
