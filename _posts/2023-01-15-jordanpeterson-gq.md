@@ -1,10 +1,9 @@
 ---
 layout: post
-title: Interpreting the Comments on Jordan Peterson's Most Viewed YouTube Interview
+title: Interpreting the Comments of Jordan Peterson's Most Viewed YouTube Interview
 ---
 
-<video src="/public/uploads/jp-gq.mov" autoplay controls="controls" style="max-width: 996px;">
-</video>
+<img src="/public/uploads/jp-gq.gif" width="900">
 
 In the digital age, social media has become a powerful tool for expressing opinions and beliefs. YouTube is one of the most popular video-sharing websites, and researchers have been exploring how people evaluate the views presented on these platforms. Results show that users not only engage with what they see, but also with other people's opinions, creating echo chambers where individuals are exposed only to similar ideas and perspectives.
 
@@ -23,7 +22,8 @@ This study provides evidence for the existence of echo chambers in online discou
 > After passing the final [dataset](https://docs.google.com/spreadsheets/d/1HKPJJin4aYQzX1ur9wUADYQLi76MPnc2/edit?usp=sharing&ouid=105091277710928109266&rtpof=true&sd=true) through JPSA, the average Polarity and Subjectivity of all the comments were calculated.
 
 ```python
-# Behnam Baharmand (bb222nm@student.lnu.se)
+# Behnam Baharmand
+# Jukka Tyrkkö
 # Linguistic Perspectives MELL 2021
 # Version 0.1.0
 
