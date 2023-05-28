@@ -22,8 +22,6 @@ This study provides evidence for the existence of echo chambers in online discou
 > After passing the final [dataset](https://docs.google.com/spreadsheets/d/1HKPJJin4aYQzX1ur9wUADYQLi76MPnc2/edit?usp=sharing&ouid=105091277710928109266&rtpof=true&sd=true) through JPSA, the average Polarity and Subjectivity of all the comments were calculated.
 
 ```python
-# Behnam Baharmand
-# Jukka Tyrkkö
 # Linguistic Perspectives MELL 2021
 # Version 0.1.0
 
@@ -31,35 +29,39 @@ import csv
 import time
 from textblob import TextBlob
 
-# Takes in dataset.csv which is one comment per line.
-# Saves output.csv which is original_comment | polarity | sentiment
+def read_dataset(filename):
+    with open(filename, "r", encoding="UTF-8") as inputfile:
+        dataset_list = inputfile.readlines()
+        dataset_list = list(map(str.strip, dataset_list))
+    return dataset_list
 
-start_time = time.time()  # Let's see how long it takes to run the code
+def perform_sentiment_analysis(dataset_list):
+    results_list = []
+    for comment in dataset_list:
+        tb = TextBlob(comment)
+        polarity = round(tb.polarity, ROUNDING_PRECISION)
+        subjectivity = round(tb.subjectivity, ROUNDING_PRECISION)
+        results_list.append([comment, polarity, subjectivity])
+    return results_list
 
-results_list = []
+def write_results_to_csv(results_list, filename):
+    header_fields = ["Comment", "Polarity", "Subjectivity"]
+    with open(filename, "w", encoding="UTF-8") as csvfile:
+        csvwriter = csv.writer(csvfile)
+        csvwriter.writerow(header_fields)
+        csvwriter.writerows(results_list)
 
-with open("dataset.csv", "r", encoding="UTF-8") as inputfile:
-    dataset_list = inputfile.readlines()  # list of lines
-    dataset_list = list(map(str.strip, dataset_list))  # Remove line breaks
+def main():
+    start_time = time.time()
 
-    for item in dataset_list:
-        tb = TextBlob(item)
-        polarity = round(tb.polarity, 3)
-        subjectivity = round(tb.subjectivity, 3)
-        results_list.append([item, polarity, subjectivity])
+    dataset_list = read_dataset("dataset.csv")
+    results_list = perform_sentiment_analysis(dataset_list)
+    write_results_to_csv(results_list, "output.csv")
 
-print(len(results_list))
+    print("Process finished in: %s seconds\n" % round((time.time() - start_time), ROUNDING_PRECISION))
 
-export_filename = "jspa-output.csv"
-header_fields = ["Comment", "Polarity", "Subjectivity"]
-rows = results_list
-
-with open(export_filename, "w", encoding="UTF-8") as csvfile:
-    csvwriter = csv.writer(csvfile)  # Createa csv writer obj
-    csvwriter.writerow(header_fields)  # writing the field
-
-    csvwriter.writerows(results_list)  # writing the data rows
-
-print("▐░░ Processs finished in: %s seconds\n" % round((time.time() - start_time), 3))
+if __name__ == "__main__":
+    ROUNDING_PRECISION = 3
+    main()
 
 ```
